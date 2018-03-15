@@ -52,7 +52,8 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTPHEADER => array(
     "cache-control: no-cache",
     "content-type: application/json",
-    "postman-token: c689c91c-2a5c-a945-ca7e-392a3f2cc95e"
+    "postman-token: 74A121BA-45D9-4B16-8419-E2D95E2A90E9"
+    
   ),
 ));
 
@@ -105,7 +106,8 @@ curl_setopt_array($curl, array(
     "authorization: Bearer $accessToken",
     "cache-control: no-cache",
     "content-type: application/json",
-    "postman-token: 8f8033ef-c4d7-cfa2-e4c3-16dae3a9ab6b"
+    "postman-token: 74A121BA-45D9-4B16-8419-E2D95E2A90E9"
+    
   ),
 ));
 
