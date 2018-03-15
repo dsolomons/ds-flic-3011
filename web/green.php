@@ -93,7 +93,7 @@ $subtitle = ($_REQUEST['subtitle'] ? $_REQUEST['subtitle'] : "subtitle");
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://www.exacttargetapis.com/push/v1/messageContact/MToxMTQ6MA/send",
+  CURLOPT_URL => "https://www.exacttargetapis.com/push/v1/messageContact/MjoxMTQ6MA/send",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
