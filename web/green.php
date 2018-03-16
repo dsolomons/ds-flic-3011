@@ -20,7 +20,7 @@
 // set variable for loop timing and optional iteration count
 
 $loop_timer = 5;      // time in seconds to wait between loops
-$max_loop_count = 2;  // max loop count, optional, 0 = unlimited
+$max_loop_count = 1;  // max loop count, optional, 0 = unlimited
 $exit = FALSE;        // initialise loop exit flag (used for counter)
 
 // *****************************
@@ -95,14 +95,14 @@ $subtitle = ($_REQUEST['subtitle'] ? $_REQUEST['subtitle'] : "subtitle");
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://www.exacttargetapis.com/push/v1/messageApp/MTE6MTE0OjA/send",
+  CURLOPT_URL => "https://www.exacttargetapis.com/push/v1/messageContact/MTE6MTE0OjA/send",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  //CURLOPT_POSTFIELDS => "{\n  \"SubscriberKeys\": [\n    \"mrichards@salesforce.com\"\n  ],\n  \"Override\": true,\n  \"MessageText\": \"$message\",\n  \"title\": \"title\",\n  \"subtitle\": \"$subtitle\",\n  \"Badge\": \"+1\"\n}",
+  CURLOPT_POSTFIELDS => "{\n  \"SubscriberKeys\": [\n    \"0036A00000PVrDSQA1\"\n  ],\n  \"Override\": true,\n  \"MessageText\": \"$message\",\n  \"title\": \"title\",\n  \"subtitle\": \"$subtitle\",\n  \"Badge\": \"+1\"\n}",
   CURLOPT_HTTPHEADER => array(
     "authorization: Bearer $accessToken",
     "cache-control: no-cache",
@@ -116,7 +116,7 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 
 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-echo 'HTTP code: ' . $httpcode;
+echo 'HTTP code: ' . $httpcode . "</br>";
 
 curl_close($curl);
 
