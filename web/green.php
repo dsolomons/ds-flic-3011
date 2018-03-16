@@ -20,7 +20,7 @@
 // set variable for loop timing and optional iteration count
 
 $loop_timer = 5;      // time in seconds to wait between loops
-$max_loop_count = 1;  // max loop count, optional, 0 = unlimited
+$max_loop_count = 2;  // max loop count, optional, 0 = unlimited
 $exit = FALSE;        // initialise loop exit flag (used for counter)
 
 // *****************************
@@ -123,6 +123,7 @@ if ($err) {
   echo $response;
 }
 
+echo $response;
 // ****************************************************************************************************
 // INSERT API CODE HERE - END
 // ****************************************************************************************************
