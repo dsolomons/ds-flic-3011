@@ -115,6 +115,9 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
+$httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+echo 'HTTP code: ' . $httpcode;
+
 curl_close($curl);
 
 if ($err) {
@@ -122,11 +125,6 @@ if ($err) {
 } else {
   echo $response;
 }
-
-$httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-curl_close($curl);
-
-echo 'HTTP code: ' . $httpcode;
 
 
 // ****************************************************************************************************
