@@ -95,14 +95,14 @@ $subtitle = ($_REQUEST['subtitle'] ? $_REQUEST['subtitle'] : "subtitle");
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://www.exacttargetapis.com/push/v1/messageContact/MTE6MTE0OjA/send",
+  CURLOPT_URL => "https://www.exacttargetapis.com/push/v1/messageApp/MTE6MTE0OjA/send",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\n  \"SubscriberKeys\": [\n    \"mrichards@salesforce.com\"\n  ],\n  \"Override\": true,\n  \"MessageText\": \"$message\",\n  \"title\": \"title\",\n  \"subtitle\": \"$subtitle\",\n  \"Badge\": \"+1\"\n}",
+  //CURLOPT_POSTFIELDS => "{\n  \"SubscriberKeys\": [\n    \"mrichards@salesforce.com\"\n  ],\n  \"Override\": true,\n  \"MessageText\": \"$message\",\n  \"title\": \"title\",\n  \"subtitle\": \"$subtitle\",\n  \"Badge\": \"+1\"\n}",
   CURLOPT_HTTPHEADER => array(
     "authorization: Bearer $accessToken",
     "cache-control: no-cache",
@@ -123,7 +123,7 @@ if ($err) {
   echo $response;
 }
 
-echo $response;
+echo "Curl Response: " . $response;
 // ****************************************************************************************************
 // INSERT API CODE HERE - END
 // ****************************************************************************************************
