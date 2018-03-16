@@ -123,7 +123,12 @@ if ($err) {
   echo $response;
 }
 
-echo "Curl Response: " . $response;
+$httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+curl_close($curl);
+
+echo 'HTTP code: ' . $httpcode;
+
+
 // ****************************************************************************************************
 // INSERT API CODE HERE - END
 // ****************************************************************************************************
